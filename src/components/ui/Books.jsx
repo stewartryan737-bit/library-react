@@ -1,26 +1,35 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Books = () => {
+const Books = ({ book }) => {
   return (
    <div className="book">
             <a href="">
               <figure className="book__img--wrapper">
-                <img src="https://m.media-amazon.com/images/I/81ANaVZk5LL._AC_UF1000,1000_QL80_.jpg" alt="" className="book__img" />
+                <img src= {book.url} alt={book.title} className="book__img" />
               </figure>
             </a>
             <div className="book__title">
-              <a href="/" className="book__title--link">Atomic Habits</a>
+              <a href="/" className="book__title--link">{book.title}</a>
             </div>
             <div className="book__rating">
-              <FontAwesomeIcon icon="star" />
-              <FontAwesomeIcon icon="star" />
-              <FontAwesomeIcon icon="star" />
-              <FontAwesomeIcon icon="star" />
-              <FontAwesomeIcon icon="star-half-alt" />
+              {
+              new Array(Math.floorbook.rating).fill(0).map((_, index) => (
+                <FontAwesomeIcon key={index} icon={index < book.rating ? "star" : "star-o"} />
+              ))
+              }
             </div>
             <div className="book__price">
-              <span className="book__price--normal">$15.00</span>$10.00
+              {book.salePrice ? (
+                <>
+                  <span className="book__price--normal">
+                    ${book.originalPrice.toFixed(2)}
+                  </span>
+                  ${book.salePrice.toFixed(2)}
+                </>
+              ) : (
+                <>${book.originalPrice.toFixed(2)}</>
+              )}
           </div>
         </div>
   );
