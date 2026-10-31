@@ -1,12 +1,12 @@
 import React from "react";
-import Book from "./ui/Books";
+import Book from "./ui/Book";
 import { books } from "../data";
 
 const Featured = () => {
   console.log(books);
-  console.log(  books.filter((book) => book.rating === 5).slice(0, 4));
+  console.log(books.filter((book) => book.rating === 5).slice(0, 4));
 
-return (
+  return (
     <section id="features">
       <div className="container">
         <div className="row">
@@ -19,8 +19,7 @@ return (
               .slice(0, 8)
               .map((book) => (
                 <Book key={book.id} book={book} />
-              ))
-            }
+              ))}
             {/* <Books />
             <Books />
             <Books />

@@ -1,6 +1,6 @@
 import React from "react";
-import Book from './ui/Books';
-import { books } from '../data';
+import Book from "./ui/Book";
+import { books } from "../data";
 import { Link } from "react-router-dom";
 
 const Explore = () => {
@@ -12,11 +12,9 @@ const Explore = () => {
             Explore more<span className="purple">Books</span>
           </h2>
           <Link to="/Books">
-            <button className="btn">
-              Explore books
-            </button>
+            <button className="btn">Explore books</button>
           </Link>
-          </div>
+        </div>
       </div>
     </section>
   );
