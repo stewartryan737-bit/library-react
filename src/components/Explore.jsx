@@ -1,6 +1,7 @@
 import React from "react";
 import Book from './ui/Books';
 import { books } from '../data';
+import { Link } from "react-router-dom";
 
 const Explore = () => {
   return (
@@ -10,11 +11,11 @@ const Explore = () => {
           <h2 className="section__title">
             Explore more<span className="purple">Books</span>
           </h2>
-          <a href="/Books">
+          <Link to="/Books">
             <button className="btn">
               Explore books
             </button>
-          </a>
+          </Link>
           </div>
       </div>
     </section>

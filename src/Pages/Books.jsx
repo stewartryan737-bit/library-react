@@ -5,14 +5,14 @@ import Book from "../components/ui/Books.jsx";
 
 const Books = ({ books: initialBooks }) => {
   const [books, setBooks] = useState(initialBooks);
-  function filterBooks(e) {
-    const value = e.target.value;
-    if (value === "LOW_TO_HIGH") {
-      setBooks([...books].sort((a, b) => a.price - b.price));
-    } else if (value === "HIGH_TO_LOW") {
-      setBooks([...books].sort((a, b) => b.price - a.price));
-    } else if (value === "RATING") {
-      setBooks([...books].sort((a, b) => b.rating - a.rating));
+  function filterBooks(filter) {
+    console.log(filter);
+    if (filter === "LOW_TO_HIGH") {
+      setBooks(books.slice().sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)));
+    } else if (filter === "HIGH_TO_LOW") {
+      setBooks(books.slice().sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)));
+    } else if (filter === "RATING") {
+      setBooks(books.slice().sort((a, b) => b.rating - a.rating));
     }
   }
   return (
