@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BookInfo = ({ books }) => {
   return (
@@ -7,7 +9,9 @@ const BookInfo = ({ books }) => {
         <div className="books__container">
             <div className="row">
               <div className="books__selected--top">
-                <h2 className="section__title books__header--title">Book Info</h2>
+                <Link to="/books" className="book__link">
+                <FontAwesomeIcon icon="arrow-left" />
+                </Link>
               </div>
             </div>
           </div>

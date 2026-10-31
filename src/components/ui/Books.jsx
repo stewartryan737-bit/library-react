@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const Books = ({ book }) => {
   return (
     <div className="book">
-      <Link to="/Books">
+      <Link to="/Books/1">
         <figure className="book__img--wrapper">
           <img src={book.url} alt={book.title} className="book__img" />
         </figure>
       </Link>
       <div className="book__title">
-        <Link to="/Books" className="book__title--link">
+        <Link to="/Books/1" className="book__title--link">
           {book.title}
         </Link>
       </div>
