@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "../components/ui/Rating";
 
 const BookInfo = ({ books }) => {
+  const { id } = useParams();
+  console.log({books})
+  const book = books.filter((bk) => bk.id == id)[0];
   return (
     <div id="books__body">
       <main id="books__main">
@@ -21,11 +24,12 @@ const BookInfo = ({ books }) => {
               </div>
               <div className="book__selected">
                 <figure className="book__selected--figure">
-                  <img src={books.url} alt={books.title} className="book__selected--img" />
+                  <img src={book.url} alt={book.title} className="book__selected--img" />
                 </figure>
                 <div className="book__selected--description">
                   <h2 className="book__selected--title">{books.title}</h2>
-                  <Rating rating={books.rating} />
+                  <Rating rating={book.rating} />
+                  {console.log({book})}
                 </div>
               </div>
             </div>
