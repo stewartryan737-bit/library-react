@@ -10,23 +10,10 @@ import { books } from "./data";
 
 function App() {
   const [cart, setCart] = useState([]);
+}
 
   function addToCart(book) {
-    const dupeItem = cart.find((item) => item.id === book.id);
-    if (dupeItem) {
-      setCart(
-        cart.map((item) =>
-          item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      );
-      return;
-    }
-    setCart([...cart, { ...book, quantity: 1 }]); 
-  }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+   
 
   return (
     <Router>
