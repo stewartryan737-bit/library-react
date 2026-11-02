@@ -9,7 +9,7 @@ const Book = ({ book }) => {
     <div className="book">
       <Link to={`/books/${book.id}`}>
         <figure className="book__img--wrapper">
-          <img src={book.url} alt={book.title} className="book__img" />
+          <img src={book.url} alt={book.title} className="book__img" onLoad={() => console.log(`${book.title} loaded`)} />
         </figure>
       </Link>
       <div className="book__title">
