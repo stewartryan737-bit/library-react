@@ -11,17 +11,17 @@ const Book = ({ book }) => {
   useEffect(() => {
     const image = new Image();
     image.src = book.url;
-    image.onLoad = () => {
+    image.onload = () => {
       setTimeout(() => {
         if (mountedRef.current) {
-       setImg(image);
-      }
+          setImg(image);
+        }
       }, 300);
     };
     return () => {
       mountedRef.current = false;
-    }
-  })
+    };
+  }, [book.url]);
 
   return (
     <div className="book">
